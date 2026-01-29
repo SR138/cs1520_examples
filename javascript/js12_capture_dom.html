@@ -16,8 +16,8 @@
 		const theBody = document.getElementById("theBody");
 		const theEntry = document.getElementById("theEntry");
 		
-		theTable.addEventListener("click", hello1, false);
-		theBody.addEventListener("click", hello2, true);
+		theTable.addEventListener("click", hello1, false); //default, handler runs during bubbling phase (which travels from the target element up to the root (outermost) element)
+		theBody.addEventListener("click", hello2, true); //handler runs during capturing phase (which travels from root element down to target element)
 		theEntry.addEventListener("click", () => { console.log("Hello! 3"); }, false);
 	}
 
