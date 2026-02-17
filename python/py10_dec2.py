@@ -15,7 +15,7 @@ print(add.__name__)
 print(add.__doc__)
 
 def off_by_one_W(original_function):
-	@wraps(original_function)
+	@wraps(original_function)			# note the added wraps decorator that preserves original function's metadata
 	def new_function(x, y):
 		return original_function(x, y) + 1
 	return new_function

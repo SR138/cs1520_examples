@@ -16,6 +16,7 @@ with open("example.txt") as inf:
 
 print()
 		
+# similar to "using" keyword in C#
 from contextlib import contextmanager
 
 @contextmanager

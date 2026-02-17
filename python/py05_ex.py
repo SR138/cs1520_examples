@@ -4,7 +4,7 @@ def divide(x, y):
 	except ZeroDivisionError:
 		print("division by zero!")
 	else:
-		print(f"result is {result}")
+		print(f"result is {result}") #result var is within scope
 	finally:
 		print("executing finally clause")
 
