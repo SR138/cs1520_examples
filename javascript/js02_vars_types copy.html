@@ -72,13 +72,14 @@
 	q = 7;
 	// Expected result:  
 	console.log(`16: q is ${q} and its type is ${typeof(q)}`);
-	var q = 8; // can redeclare variable using var
+	var q = 8; // can redeclare variable using var + can declare it after it's used
+	console.log(`16.5: q is ${q}`)
 
 	//let p;
 	p = 5;
 	// Expected result:  
 	console.log(`17: p is ${p} and its type is ${typeof(p)}`);
-	let p; // cannot redeclare variable using let
+	let p = 8; // cannot redeclare variable using let + cannot use p before declaring
 </script>
 </head>
 <body>
