@@ -25,3 +25,5 @@ Git Commands
 - stage all changes: git add .
 - git commit -m "message"
 - git push
+
+- git var GIT_AUTHOR_IDENT
