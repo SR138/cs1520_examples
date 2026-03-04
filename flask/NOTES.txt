@@ -14,8 +14,14 @@
     - flask --app [file.py] routes
 
 
-- Outside Command Prompt
+Outside Command Prompt
     - login as root user into wsl
         - wsl -u root
 	- access this distro specifically
 		- wsl.exe -d Ubuntu-24.04
+    - open WSL terminal and do "code ." to open vscode
+
+Git Commands
+- stage all changes: git add .
+- git commit -m "message"
+- git push
