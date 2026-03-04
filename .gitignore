@@ -1,0 +1,3 @@
+# venv folder + cache
+flask/__pycache__/
+flask/.venv/

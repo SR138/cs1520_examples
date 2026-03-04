@@ -13,6 +13,6 @@ def fooController():
     return "<h1>THIS IS THE FOO PAGE</h1>"
 
 
-@app.route("/bar/")
+@app.route("/bar/") # will redirect to /bar/ even if /bar is used
 def bar():
     return "<h1>this is the bar page</h1>"

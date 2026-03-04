@@ -37,6 +37,6 @@ presentpage = """<!DOCTYPE html>
 @app.route("/", methods=["GET", "POST"])
 def form():
     if request.method == "POST":
-        return presentpage.format(request.form["anumber"], request.form["astring"])
+        return presentpage.format(request.form["anumber"], request.form["astring"]) # can access the form that's sent with the request
     else:
         return formpage

@@ -1,0 +1,21 @@
+- create new virtual environment and install Flask
+    - python -m venv [virtual_env_name]
+- activate virtual environment
+    - source [virtual_env_name]/bin/activate
+- install requirements.txt
+    - pip install -r requirements.txt
+- create a requirements.txt file
+    - pip freeze > requirements.txt
+
+- run flask app
+    - flask --app [file.py] run
+    - add --debug to run in debug mode
+- list routes available
+    - flask --app [file.py] routes
+
+
+- Outside Command Prompt
+    - login as root user into wsl
+        - wsl -u root
+	- access this distro specifically
+		- wsl.exe -d Ubuntu-24.04
