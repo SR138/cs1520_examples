@@ -10,6 +10,8 @@
 
     Updated to use the SQLAlchemy ORM by Nick Farnan
 """
+# need to initialize databases first before running app
+# testing: open 3 different browser windows with different profiles to test different users
 
 import time
 import os
@@ -41,7 +43,7 @@ SECRET_KEY = "development key"
 SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(app.root_path, "minitwit.db")
 
 app.config.from_object(__name__)
-app.config.from_envvar("MINITWIT_SETTINGS", silent=True)
+app.config.from_envvar("MINITWIT_SETTINGS", silent=True) #env vars in Flask
 
 db.init_app(app)
 
@@ -72,10 +74,10 @@ def gravatar_url(email, size=80):
     )
 
 
-@app.before_request
+@app.before_request # happens before every request
 def before_request():
-    g.user = None
-    if "user_id" in session:
+    g.user = None # g is global object
+    if "user_id" in session: 
         g.user = db.session.execute(db.select(User).where(User.user_id == session["user_id"])).scalar()
 
 
@@ -95,7 +97,7 @@ def timeline():
         Message.query.filter(Message.author_id.in_(timeline_ids))
         .order_by(Message.pub_date.desc())
         .limit(PER_PAGE)
-        .all()
+        .all() # collection of results (Message objects)
     )
     return render_template("timeline.html", messages=messages)
 

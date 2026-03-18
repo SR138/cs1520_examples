@@ -21,7 +21,7 @@ class User(db.Model):
     follows: Mapped[list["User"]] = relationship(
         secondary="follows_table",
         primaryjoin="User.user_id==follows_table.c.follower_id",
-        secondaryjoin="User.user_id==follows_table.c.followee_id",
+        secondaryjoin="User.user_id==follows_table.c.followee_id", # used by back_populates
         back_populates="followed_by",
     )
     followed_by: Mapped[list["User"]] = relationship(

@@ -3,6 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy import Integer, String, Column, ForeignKey
 
+# to run db and code
+# flask --app fl08_model.py initdb
+# flask --app fl08_model.py check
 
 # Setup
 
@@ -14,7 +17,7 @@ class Base(DeclarativeBase):
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
 
-db = SQLAlchemy(model_class=Base)
+db = SQLAlchemy(model_class=Base) # only have 1 instance of this, when using pass around reference to it
 db.init_app(app)
 
 
@@ -30,10 +33,10 @@ class User(db.Model):
         self.username = username
         self.email = email
 
-    def __repr__(self):
+    def __repr__(self): # object representation
         return f"<User {self.id} {self.username} {self.email}>"
 
-    def __str__(self):
+    def __str__(self): # string representation
         return f"{self.username}"
 
 
@@ -96,11 +99,11 @@ def displayResult(num, res):
     print(f"\nQ{num}:\n{str(res)}\n{repr(res)}\n{type(res)}\n\n")
 
 
-@app.cli.command("initdb")
+@app.cli.command("initdb") #runs this function on CLI "initdb"
 def initdb_command():
     """Reinitializes the database"""
-    db.drop_all()
-    db.create_all()
+    db.drop_all() # remove all tables
+    db.create_all() # create all tables
 
     # Populate users
     db.session.add(User("admin", "admin@example.com"))
@@ -137,7 +140,7 @@ def initdb_command():
     print("Initialized the database.")
 
 
-@app.cli.command("check")
+@app.cli.command("check") # register a custom command-line interface (CLI) function named "check"
 def default():
     """Demonstrates model queries and relationships"""
     # Queries

@@ -2,7 +2,7 @@
 <head>
 	<title>Simple AJAX example</title>
 	<script type="text/javascript">
-		let xhr = new XMLHttpRequest();
+		let xhr = new XMLHttpRequest(); //global object = race condition
 
 		function req_test() {
 			makeRequest("js16_text.txt");
@@ -16,7 +16,7 @@
 				return false;
 			}
 			
-			xhr.onreadystatechange = logResponse;
+			xhr.onreadystatechange = logResponse; //shared function reference
 			xhr.open("GET", url);
 			xhr.send();
 		}

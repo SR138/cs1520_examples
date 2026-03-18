@@ -41,13 +41,17 @@ function poller() {
 		});
 }
 
+// table appears to update but what we're doing is deleting all the rows b/f
+// adding the new version of rows back to the table
 function updateTable(result) {
 	console.log("Updating the table");
+	// deletes all rows in the table
 	const tab = document.getElementById("theTable");
 	while (tab.rows.length > 0) {
 		tab.deleteRow(0);
 	}
 	
+	// adds all rows in result to the table
 	for (var i = 0; i < result.length; i++) {
 		addRow(result[i]);
 	}
