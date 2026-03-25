@@ -1,0 +1,57 @@
+GET http://localhost:5000/todos HTTP/1.1
+
+### create a task and add to dictionary of TODOS
+POST http://localhost:5000/todos HTTP/1.1
+content-type: application/json
+
+{
+    "task": "test task"
+}
+
+### get a specific todo by id
+GET http://localhost:5000/todos/todo1 HTTP/1.1
+
+### delete a specific todo by id
+DELETE http://localhost:5000/todos/todo4 HTTP/1.1
+
+### replace the item/entry with new data based on todo id but don't give request data
+PUT http://localhost:5000/todos/todo1 HTTP/1.1
+content-type: application/json
+
+### replace the item/entry with new data based on todo id
+PUT http://localhost:5000/todos/todo1 HTTP/1.1
+content-type: application/json
+
+{
+    "task": "new put task",
+    "done": false
+}
+
+### # Looking for "type" argument in request to be either "done" or "not_done"
+    # If neither are found, return the count of all todos
+POST http://localhost:5000/count HTTP/1.1
+content-type: application/json
+
+{
+    "type": "no type"
+}
+
+### # Looking for "type" argument in request to be either "done" or "not_done"
+    # If neither are found, return the count of all todos
+POST http://localhost:5000/count HTTP/1.1
+content-type: application/json
+
+{
+    "type": "done"
+}
+
+### # Looking for two arguments:
+    # "id": the todo id to update
+    # "status": either true or false for "done"/"not_done"
+POST http://localhost:5000/mark HTTP/1.1
+content-type: application/json
+
+{
+    "id": "todo2",
+    "status": true
+}
