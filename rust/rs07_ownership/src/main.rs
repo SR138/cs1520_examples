@@ -67,6 +67,8 @@ fn print_area_borrow<T: Shape>(some_shape: &T) {
 //}
 
 // Lifetime annotation example
+// NOTE: not all variables need the annotation, only those related to returned reference need it
+// NOTE: only relevant when there are multiple references + a returned reference
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x

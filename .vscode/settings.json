@@ -1,0 +1,15 @@
+{
+  "rust-analyzer.linkedProjects": [
+    "./rust/rs01_hello_world/Cargo.toml",
+    "./rust/rs02_vars_types/Cargo.toml",
+    "./rust/rs03_tups_arr/Cargo.toml",
+    "./rust/rs04_control_flow/Cargo.toml",
+    "./rust/rs05_structs/Cargo.toml",
+    "./rust/rs06_enum/Cargo.toml",
+    "./rust/rs07_ownership/Cargo.toml",
+    "./rust/rs08_iter_clos/Cargo.toml",
+    "./rust/rs09_smart_point/Cargo.toml",
+    "./rust/rs10_modules/Cargo.toml",
+    "./rust/rs11_axum_api/Cargo.toml"
+  ]
+}

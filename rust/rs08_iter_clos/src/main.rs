@@ -43,13 +43,14 @@ fn main() {
     let mut captured = 10;
 
     // Has to implement Fn trait due to immutable borrow
+    // NOTE: || contain the parameters to use for function (below is a function def assigned to c1)
     let c1 = |x| x + captured;
     println!("c1(5): {}", c1(5));
     println!("c1(15): {}", c1(15));
 
     captured = 20;
     // Disallowed by borrow check, can't mutate while mutably borrowed
-    //println!("c1(15): {}", c1(15));
+    //println!("c1(15): {}", c1(15)); // Can't do this b/c value changes before using again
 
     // Has to implement FnMut trait due to mutable borrow
     let mut c2 = |x| captured += x;

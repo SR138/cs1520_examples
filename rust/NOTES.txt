@@ -1,0 +1,18 @@
+Cargo
+- creates a new Cargo Rust project
+    - cargo new [proj_name]
+- runs Cargo project
+    - cargo run
+- builds Cargo project (release is optimized version)
+    - cargo build [--release]
+- to run release build
+    - [project folder]/target/release/[proj_name]
+- to test with release version/mode
+    - cargo test --release
+
+To fix cc linker issue:
+- sudo apt-get update
+- sudo apt install build-essential
+
+OTHER NOTES
+- Rust does static linking --> recompiles every external libraries, so can take awhile

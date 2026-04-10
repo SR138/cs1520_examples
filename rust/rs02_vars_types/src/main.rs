@@ -8,10 +8,10 @@ fn main() {
 
     println!("This is integer x: {}", x);
 
-    // This will error
+    // This will error (because Rust infers types based on first value given)
     //x = 6.1;
 
-    // We can shadow x, however
+    // We can shadow x, however ("let" allows shadowing)
     let x = 6.1;
 
     println!("This is float x: {}", x);
